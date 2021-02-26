@@ -16,17 +16,6 @@ public class Main {
         initvolume.add(-5);
         initvolume.add(22);
 
-        countVolume(initvolume.get(0), cylheight);
-        checkArray(initvolume.get(0));
-        countVolume(initvolume.get(1), cylheight);
-        checkArray(initvolume.get(1));
-        countVolume(initvolume.get(2), cylheight);
-        checkArray(initvolume.get(2));
-        countVolume(initvolume.get(3), cylheight);
-        checkArray(initvolume.get(3));
-        countVolume(initvolume.get(4), cylheight);
-        checkArray(initvolume.get(4));
-
         System.out.println("Введите радиус основания");
         int rad = scanner.nextInt();
 
@@ -47,6 +36,12 @@ public class Main {
 
         int res = height * rad;
         System.out.println("Объем цилиндра = " + res);
+
+        countVolume(initvolume.get(0), cylheight);
+        countVolume(initvolume.get(1), cylheight);
+        countVolume(initvolume.get(2), cylheight);
+        countVolume(initvolume.get(3), cylheight);
+        countVolume(initvolume.get(4), cylheight);
     }
 
     public static void checkInput(int rad) throws NegativeValueException {
@@ -55,13 +50,10 @@ public class Main {
         }
     }
 
-    public static void checkArray(Integer checked) throws NegativeValueException{
-        if (checked < 0) {
+    public static void countVolume(Integer inputrad, Integer inputheight) throws NegativeValueException {
+        System.out.println(inputrad * inputheight);
+        if (inputrad < 0) {
             throw new NegativeValueException("Введите положительное число");
         }
-    }
-
-    public static void countVolume(Integer inputrad, Integer inputheight) {
-        System.out.println(inputrad * inputheight);
     }
 }
